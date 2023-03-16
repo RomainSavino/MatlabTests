@@ -1,0 +1,14 @@
+function [image, json] = load_image_and_json(image_path, params)
+    % Charger l'image
+    image = imread(image_path);
+    
+    % Charger le fichier JSON
+    [~, filename, ~] = fileparts(image_path);
+    json_path = fullfile(fileparts(image_path), [filename '.json']);
+    json = jsondecode(fileread(json_path));
+    
+    % Extraire les paramètres spécifiés
+    if nargin > 1 % Vérifie si des paramètres sont fournis
+        json = rmfield(json, setdiff(fieldnames(json), params)); % Supprime les champs non spécifiés
+    end
+end
