@@ -11,4 +11,3 @@ function [image, json] = load_image_and_json(image_path, params)
     if nargin > 1 % Vérifie si des paramètres sont fournis
         json = rmfield(json, setdiff(fieldnames(json), params)); % Supprime les champs non spécifiés
     end
-https://auth0.openai.com/u/login/identifier?state=hKFo2SAta255NTdPQWVqWXFnMjA3WnRlTmxrYXFVMEVXVnpER6Fur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDk0UVY5MTRtZURIMldBdHQ4LTBPWUtoM1ZNUE1jUUkyo2NpZNkgVGRKSWNiZTE2V29USHROOTVueXl3aDVFNHlPbzZJdEc
